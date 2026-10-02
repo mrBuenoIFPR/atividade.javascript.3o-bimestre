@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 5</title>
+</head>
+<body>
+    <ul id="lista"></ul>
+
+    <button id="adicionarItem">Adicionar item</button>
+
+    <script>
+        const lista = document.getElementById("lista");
+        const botao = document.getElementById("adicionarItem");
+
+        botao.addEventListener("click", function() {
+            const novoItem = document.createElement("li");
+            const numero = lista.children.length + 1;
+
+            novoItem.textContent = "Item n° " + numero;
+            lista.appendChild(novoItem);
+        });
+    </script>
+</body>
+</html>

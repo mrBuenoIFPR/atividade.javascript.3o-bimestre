@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 4</title>
+</head>
+<body>
+    <p id="contador">0</p>
+
+    <button id="adicionar">Adicionar</button>
+    <button id="zerar">Zerar</button>
+
+    <script>
+        let valor = 0;
+
+        const contador = document.getElementById("contador");
+        const adicionar = document.getElementById("adicionar");
+        const zerar = document.getElementById("zerar");
+
+        adicionar.addEventListener("click", function() {
+            valor++;
+            contador.textContent = valor;
+        });
+
+        zerar.addEventListener("click", function() {
+            valor = 0;
+            contador.textContent = valor;
+        });
+    </script>
+</body>
+</html>

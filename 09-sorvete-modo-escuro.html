@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 9</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .escuro {
+            background-color: #222;
+            color: white;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="sabor" placeholder="Digite um sabor de sorvete">
+
+    <p id="resposta"></p>
+
+    <button id="modo">Modo escuro</button>
+
+    <script>
+        const campo = document.getElementById("sabor");
+        const resposta = document.getElementById("resposta");
+        const modo = document.getElementById("modo");
+
+        campo.addEventListener("input", function() {
+            const texto = campo.value.toLowerCase();
+
+            if (texto.length > 3) {
+                if (texto.includes("chocolate")) {
+                    resposta.textContent = "Eu amo sorvete de chocolate!";
+                } else if (texto.includes("flocos")) {
+                    resposta.textContent =
+                        "Ahh, mas chocolate é o meu favorito...";
+                } else {
+                    resposta.textContent =
+                        "Ahh, eu esperava um sabor de sorvete...";
+                }
+            } else {
+                resposta.textContent = "";
+            }
+        });
+
+        modo.addEventListener("click", function() {
+            document.body.classList.toggle("escuro");
+
+            if (document.body.classList.contains("escuro")) {
+                modo.textContent = "Modo claro";
+            } else {
+                modo.textContent = "Modo escuro";
+            }
+        });
+    </script>
+</body>
+</html>

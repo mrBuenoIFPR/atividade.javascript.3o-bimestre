@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 10</title>
+</head>
+<body>
+    <h1>Troca automática de imagens</h1>
+
+    <img id="imagem" width="600" height="400" alt="Imagem aleatória">
+
+    <script>
+        const imagens = [
+            "https://picsum.photos/id/237/600/400",
+            "https://picsum.photos/id/238/600/400",
+            "https://picsum.photos/id/239/600/400",
+            "https://picsum.photos/id/240/600/400"
+        ];
+
+        let indice = 0;
+
+        function trocarImagem() {
+            document.getElementById("imagem").src = imagens[indice];
+
+            indice++;
+
+            if (indice >= imagens.length) {
+                indice = 0;
+            }
+        }
+
+        trocarImagem();
+
+        setInterval(trocarImagem, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 7</title>
+    <style>
+        img {
+            width: 300px;
+            display: block;
+            margin-bottom: 15px;
+        }
+    </style>Trocar imagem
+</head>
+<body>
+    <h1>Gravity Falls</h1>
+
+    <img id="personagem"
+         src="https://static.wikia.nocookie.net/vsbattles/images/8/83/Soos_appearance.png/revision/latest/scale-to-width-down/1200?cb=20151212201119"
+         alt="Soos Ramirez">
+
+    <p id="resposta">Passe o mouse ou clique na imagem.</p>
+
+    <button id="trocar">Trocar imagem</button>
+
+    <script>
+        const imagem = document.getElementById("personagem");
+        const resposta = document.getElementById("resposta");
+        const botao = document.getElementById("trocar");
+
+        const imagem1 =
+            "https://static.wikia.nocookie.net/vsbattles/images/8/83/Soos_appearance.png/revision/latest/scale-to-width-down/1200?cb=20151212201119";
+
+        const imagem2 =
+            "https://static.wikia.nocookie.net/viloes/images/e/e4/BillCipherCropped.png/revision/latest/scale-to-width/360?cb=20210523151319&path-prefix=pt-br";
+
+        imagem.addEventListener("mouseenter", function() {
+            resposta.textContent = "E aí, cara! Que que você tá fazendo?";
+        });
+
+        imagem.addEventListener("mouseleave", function() {
+            resposta.textContent = "Ei, cara! Volta aqui!";
+        });
+
+        imagem.addEventListener("mousemove", function() {
+            resposta.textContent = "Opa! Para de mexer aí!";
+        });
+
+        imagem.addEventListener("click", function() {
+            resposta.textContent = "Você clicou em mim?! Maneiro!";
+        });
+
+        botao.addEventListener("click", function() {
+            if (imagem.src.includes("Soos", "soos")) {
+                imagem.src = imagem2;
+            } else {
+                imagem.src = imagem1;
+            }
+        });
+    </script>
+</body>
+</html>
